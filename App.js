@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View, Image, ScrollView } from 'react-native';
+import { StyleSheet, Text, View, Image, ScrollView, SafeAreaView} from 'react-native';
 
 const logo = {
   uri: 'https://reactnative.dev/img/tiny_logo.png',
@@ -20,10 +20,10 @@ import {
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app! </Text>
-      <Text> I want to put a chart here </Text>
+    <SafeAreaView style={styles.container}>
       <ScrollView>
+          <Text style={styles.headerText}> Charts Demo </Text>
+          <Text> I want to put a chart here </Text>
           <Text style={{ fontSize: 96 }}>Scroll me plz</Text>
           <Image source={logo} />
           <Image source={logo} />
@@ -59,7 +59,7 @@ export default function App() {
 
 
       <StatusBar style="auto" />
-    </View>
+    </SafeAreaView>
   );
 }
 
@@ -70,4 +70,9 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  headerText: {
+    fontWeight: 'bold',
+    fontSize: 30,
+    textAlign: 'center',
+  }
 });
