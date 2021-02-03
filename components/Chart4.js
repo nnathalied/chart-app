@@ -1,21 +1,24 @@
 import React from 'react'
-import {View} from 'react-native'
 import { AreaChart, Grid } from 'react-native-svg-charts'
 import * as shape from 'd3-shape'
  
 class Chart_4 extends React.PureComponent {
   render() {
-    const data = [2.77, 1.43, 
-                  2.79, 8.67, 
-                  4.98,  -7.24,
-                  9.87, -1.89,
-                  -1.41,  -5.95]
+    const data = [ -1.38, .15,
+      -0.52, 0.03, -0.14,
+      1.12, 0.43, 1.4,
+      1.15, 1.4, 1.51]
     return (
       <AreaChart
         style={{ height: 200, width: 350, left:25}}
         data={data}
         curve={shape.curveNatural}
-        svg={{ fill: '#2196F3' }}
+        svg={{ stroke: '#2196F3'}}
+        showGrid ='true'
+        xMin ={0}
+        xMax={10}
+        yMin ={-2}
+        yMax = {2}
       >
         <Grid />
       </AreaChart>
