@@ -1,8 +1,8 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View, Image, ScrollView, SafeAreaView} from 'react-native';
-import { Chart, Line, Area, HorizontalAxis, VerticalAxis } from 'react-native-responsive-linechart'
-import Chart_1 from './components/Chart1.js'
+import { StyleSheet, Text, ScrollView, SafeAreaView} from 'react-native';
+
+import Bar_Chart_1 from './components/Chart1.js'
 import Chart_2 from './components/Chart2.js'
 import Chart_3 from './components/Chart3.js'
 import Chart_4 from './components/Chart4.js'
@@ -14,7 +14,7 @@ export default function App() {
         <Text style={styles.headerText}> Charts Demo </Text>
           
           <Text style={styles.chartHeaderText}> Chart 1 </Text>
-          <Chart_1></Chart_1>
+          <Bar_Chart_1></Bar_Chart_1>
 
           <Text style={styles.chartHeaderText}> Chart 2 </Text>
           <Chart_2></Chart_2>

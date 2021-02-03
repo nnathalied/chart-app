@@ -1,5 +1,5 @@
 import React from 'react';
-import { Chart, Line, Area, HorizontalAxis, VerticalAxis } from 'react-native-responsive-linechart'
+import { Chart, Line, HorizontalAxis, VerticalAxis } from 'react-native-responsive-linechart'
 
 class Chart_3 extends React.Component{
   render() {
@@ -7,33 +7,30 @@ class Chart_3 extends React.Component{
       <Chart
       style={{ height: 200, width: 400 }}
       data={[
-        { x: 0, y: 12 },
-        { x: 1, y: 7 },
-        { x: 2, y: 6 },
-        { x: 3, y: 8 },
-        { x: 4, y: 10 },
+        { x: 0, y: 1 },
+        { x: 1, y: 3 },
+        { x: 2, y: 4 },
+        { x: 3, y: 5},
+        { x: 4, y: 6 },
         { x: 5, y: 8 },
-        { x: 6, y: 12 },
-        { x: 7, y: 14 },
-        { x: 8, y: 12 },
-        { x: 9, y: 13.5 },
-        { x: 20, y: 18 },
+        { x: 6, y: 9 },
+        { x: 7, y: 11 },
+        { x: 8, y: 12},
+        { x: 9, y: 14},
+        { x: 11, y: 15},
+        { x: 15, y: 16},
+        { x: 19, y: 16},
+        { x: 20, y: 16},
       ]}
       padding={{ left: 55, bottom: 40, right: 35, top: 20 }}
       xDomain={{ min: 0, max: 20 }}
       yDomain={{ min: 0, max: 20 }}
-      viewport={{ size: { width: 5} }}
     >
       <VerticalAxis 
         tickCount={10} 
         theme={{ labels: { formatter: (v) => v.toFixed(2) } }} 
       />
       <HorizontalAxis tickCount={6} />
-      <Area 
-        smoothing="cubic-spline"
-        theme={{ gradient: { from: { color: '#ba68C8' }, 
-        to: { color: '#6A1B9A', opacity: 0.4 } }}} 
-      />
       <Line 
         theme={{ stroke: { color: '#ffa502', width: 5 }, 
         scatter: { default: { width: 4, height: 4, rx: 2 }} }} 

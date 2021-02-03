@@ -1,45 +1,29 @@
-import React from 'react';
-import { Chart, Line, Area, HorizontalAxis, VerticalAxis } from 'react-native-responsive-linechart'
-
-class Chart_4 extends React.Component{
-  render() {
-    return(
-      <Chart
-      style={{ height: 200, width: 400 }}
-      data={[
-        { x: 0, y: 12 },
-        { x: 1, y: 7 },
-        { x: 2, y: 6 },
-        { x: 3, y: 8 },
-        { x: 4, y: 10 },
-        { x: 5, y: 8 },
-        { x: 6, y: 12 },
-        { x: 7, y: 14 },
-        { x: 8, y: 12 },
-        { x: 9, y: 13.5 },
-        { x: 20, y: 18 },
-      ]}
-      padding={{ left: 55, bottom: 40, right: 35, top: 20 }}
-      xDomain={{ min: 0, max: 20 }}
-      yDomain={{ min: 0, max: 20 }}
-      viewport={{ size: { width: 5} }}
-    >
-      <VerticalAxis 
-        tickCount={11} 
-        theme={{ labels: { formatter: (v) => v.toFixed(2) } }} 
-      />
-      <HorizontalAxis tickCount={5} />
-      <Area 
-        theme={{ gradient: { from: { color: '#ffa502' }, 
-        to: { color: '#ffa502', opacity: 0.4 } }}} 
-      />
-      <Line 
-        theme={{ stroke: { color: '#ffa502', width: 5 }, 
-        scatter: { default: { width: 4, height: 4, rx: 2 }} }} 
-      />
-    </Chart>
-    )
-  }
+import React from 'react'
+import {View} from 'react-native'
+import { AreaChart, Grid } from 'react-native-svg-charts'
+import * as shape from 'd3-shape'
+ 
+class Chart_4 extends React.PureComponent {
+    render() {
+        const data = [2.77, 1.43, 
+                      2.79, 8.67, 
+                      4.98,  -7.24,
+                      9.87, -1.89,
+                    -1.41,  -5.95]
+        return (
+          <View style={{justifyContent: 'center'}}>
+            <AreaChart
+                style={{ height: 200, width: 350}}
+                data={data}
+                contentInset={{ top: 30, bottom: 30, left: 30,}}
+                curve={shape.curveNatural}
+                svg={{ fill: 'rgba(134, 65, 244, 0.8)' }}
+            >
+                <Grid />
+            </AreaChart>
+          </View>
+        )
+    }
 }
 
 export default Chart_4;
