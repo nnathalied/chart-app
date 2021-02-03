@@ -25,13 +25,14 @@ class Chart_3 extends React.Component{
       viewport={{ size: { width: 5} }}
     >
       <VerticalAxis 
-        tickCount={11} 
+        tickCount={10} 
         theme={{ labels: { formatter: (v) => v.toFixed(2) } }} 
       />
-      <HorizontalAxis tickCount={5} />
+      <HorizontalAxis tickCount={6} />
       <Area 
-        theme={{ gradient: { from: { color: '#ffa502' }, 
-        to: { color: '#ffa502', opacity: 0.4 } }}} 
+        smoothing="cubic-spline"
+        theme={{ gradient: { from: { color: '#ba68C8' }, 
+        to: { color: '#6A1B9A', opacity: 0.4 } }}} 
       />
       <Line 
         theme={{ stroke: { color: '#ffa502', width: 5 }, 

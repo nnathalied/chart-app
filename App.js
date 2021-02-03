@@ -16,111 +16,14 @@ export default function App() {
           <Text style={styles.chartHeaderText}> Chart 1 </Text>
           <Chart_1></Chart_1>
 
-
           <Text style={styles.chartHeaderText}> Chart 2 </Text>
-          <Chart
-            style={{ height: 200, width: 400 }}
-            data={[
-              { x: -5, y: 0 },
-              { x: -4, y: 7 },
-              { x: -3, y: 6 },
-              { x: -2, y: 8 },
-              { x: -1, y: 15 },
-              { x: 0, y: 18},
-              { x: 1, y: 16 },
-              { x: 2, y: 13 },
-              { x: 3, y: 8 },
-              { x: 4, y: 3 },
-              { x: 5, y: 0 },
-            ]}
-            padding={{ left: 55, bottom: 40, right: 35, top: 20 }}
-            xDomain={{ min: -5, max: 5 }}
-            yDomain={{ min: 0, max: 20 }}
-            viewport={{ size: { width: 5} }}
-          >
-            <VerticalAxis 
-              tickCount={10} 
-              theme={{ labels: { formatter: (v) => v.toFixed(2) } }} 
-            />
-            <HorizontalAxis tickCount={6} />
-            <Area 
-              smoothing="cubic-spline"
-              theme={{ gradient: { from: { color: '#ba68C8' }, 
-              to: { color: '#6A1B9A', opacity: 0.4 } }}} 
-            />
-          </Chart>
-          
+          <Chart_2></Chart_2>
+
           <Text style={styles.chartHeaderText}> Chart 3 </Text>
-          <Chart
-            style={{ height: 200, width: 400 }}
-            data={[
-              { x: 0, y: 12 },
-              { x: 1, y: 7 },
-              { x: 2, y: 6 },
-              { x: 3, y: 8 },
-              { x: 4, y: 10 },
-              { x: 5, y: 8 },
-              { x: 6, y: 12 },
-              { x: 7, y: 14 },
-              { x: 8, y: 12 },
-              { x: 9, y: 13.5 },
-              { x: 20, y: 18 },
-            ]}
-            padding={{ left: 55, bottom: 40, right: 35, top: 20 }}
-            xDomain={{ min: 0, max: 20 }}
-            yDomain={{ min: 0, max: 20 }}
-          >
-            <VerticalAxis 
-              tickCount={11} 
-              theme={{ labels: { formatter: (v) => v.toFixed(2) } }} 
-            />
-            <HorizontalAxis tickCount={5} />
-            {/* <Area 
-              theme={{ gradient: { from: { color: '#ffa502' }, 
-              to: { color: '#ffa502', opacity: 0.4 } }}} 
-            /> */}
-            <Line 
-              theme={{ stroke: { color: '#ffa502', width: 5 }, 
-              scatter: { default: { width: 4, height: 4, rx: 2 }} }} 
-            />
-          </Chart>
+          <Chart_3></Chart_3>
 
-
-          
           <Text style={styles.chartHeaderText}> Chart 4 </Text>
-          <Chart
-            style={{ height: 200, width: 400 }}
-            data={[
-              { x: 0, y: 12 },
-              { x: 1, y: 7 },
-              { x: 2, y: 6 },
-              { x: 3, y: 8 },
-              { x: 4, y: 10 },
-              { x: 5, y: 8 },
-              { x: 6, y: 12 },
-              { x: 7, y: 14 },
-              { x: 8, y: 12 },
-              { x: 9, y: 13.5 },
-              { x: 20, y: 18 },
-            ]}
-            padding={{ left: 55, bottom: 40, right: 35, top: 20 }}
-            xDomain={{ min: 0, max: 20 }}
-            yDomain={{ min: 0, max: 20 }}
-          >
-            <VerticalAxis 
-              tickCount={11} 
-              theme={{ labels: { formatter: (v) => v.toFixed(2) } }} 
-            />
-            <HorizontalAxis tickCount={5} />
-            <Area 
-              theme={{ gradient: { from: { color: '#ffa502' }, 
-              to: { color: '#ffa502', opacity: 0.4 } }}} 
-            />
-            <Line 
-              theme={{ stroke: { color: '#ffa502', width: 5 }, 
-              scatter: { default: { width: 4, height: 4, rx: 2 }} }} 
-            />
-          </Chart>
+          <Chart_4></Chart_4>
         
         </ScrollView>
       <StatusBar style="auto" />
