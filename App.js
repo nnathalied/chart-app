@@ -51,11 +51,5 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     padding:10,
     fontFamily: "AvenirNext-Bold"
-  },
-  chart:{
-    borderBottomWidth: 50,
-    borderTopWidth: 50,
-    borderLeftWidth: 50, 
-    borderRightWidth: 50,
   }
 });

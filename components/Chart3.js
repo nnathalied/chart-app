@@ -1,43 +1,48 @@
 import React from 'react';
-import { Chart, Line, HorizontalAxis, VerticalAxis } from 'react-native-responsive-linechart'
+import { View } from 'react-native'
+import { BarChart, Grid } from 'react-native-svg-charts'
+import { Text } from 'react-native-svg'
 
-class Chart_3 extends React.Component{
-  render() {
-    return(
-      <Chart
-      style={{ height: 200, width: 400 }}
-      data={[
-        { x: 0, y: 1 },
-        { x: 1, y: 3 },
-        { x: 2, y: 4 },
-        { x: 3, y: 5},
-        { x: 4, y: 6 },
-        { x: 5, y: 8 },
-        { x: 6, y: 9 },
-        { x: 7, y: 11 },
-        { x: 8, y: 12},
-        { x: 9, y: 14},
-        { x: 11, y: 15},
-        { x: 15, y: 16},
-        { x: 19, y: 16},
-        { x: 20, y: 16},
-      ]}
-      padding={{ left: 55, bottom: 40, right: 35, top: 20 }}
-      xDomain={{ min: 0, max: 20 }}
-      yDomain={{ min: 0, max: 20 }}
-    >
-      <VerticalAxis 
-        tickCount={10} 
-        theme={{ labels: { formatter: (v) => v.toFixed(2) } }} 
-      />
-      <HorizontalAxis tickCount={6} />
-      <Line 
-        theme={{ stroke: { color: '#ffa502', width: 5 }, 
-        scatter: { default: { width: 4, height: 4, rx: 2 }} }} 
-      />
-    </Chart>
-    )
-  }
+class Chart_3 extends React.PureComponent {
+
+    render() {
+
+        const data = [ 10, 5, 25, 15, 20 ]
+
+        const CUT_OFF = 20
+        const Labels = ({ x, y, bandwidth, data }) => (
+            data.map((value, index) => (
+                <Text
+                    key={ index }
+                    x={ x(index) + (bandwidth / 2) }
+                    y={ value < CUT_OFF ? y(value) - 10 : y(value) + 15 }
+                    fontSize={ 14 }
+                    fill={ value >= CUT_OFF ? 'white' : 'black' }
+                    alignmentBaseline={ 'middle' }
+                    textAnchor={ 'middle' }
+                >
+                    {value}
+                </Text>
+            ))
+        )
+
+        return (
+            <View style={{ flexDirection: 'row', height: 200, paddingVertical: 16 }}>
+                <BarChart
+                    style={{ flex: 1 }}
+                    data={data}
+                    svg={{ fill: 'rgba(134, 65, 244, 0.8)' }}
+                    contentInset={{ top: 10, bottom: 10 }}
+                    spacing={0.2}
+                    gridMin={0}
+                >
+                    <Grid direction={Grid.Direction.HORIZONTAL}/>
+                    <Labels/>
+                </BarChart>
+            </View>
+        )
+    }
+
 }
 
 export default Chart_3;

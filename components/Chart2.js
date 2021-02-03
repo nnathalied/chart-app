@@ -1,5 +1,5 @@
 import React from 'react';
-import { Chart, Area, HorizontalAxis, VerticalAxis } from 'react-native-responsive-linechart'
+import { Chart, Area,  HorizontalAxis, VerticalAxis } from 'react-native-responsive-linechart'
 
 class Chart_2 extends React.Component{
   render() {
@@ -41,6 +41,7 @@ class Chart_2 extends React.Component{
           { x: 18, y: 13.5 },
           { x: 20, y: 18 },
         ]}
+        
       />
       <Area 
         theme={{ gradient: { from: { color: '#1DE9B6' }, 
