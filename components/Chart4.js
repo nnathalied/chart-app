@@ -1,7 +1,7 @@
 import React from 'react';
 import { Chart, Line, Area, HorizontalAxis, VerticalAxis } from 'react-native-responsive-linechart'
 
-class Line_Chart extends React.Component{
+class Chart_4 extends React.Component{
   render() {
     return(
       <Chart
@@ -42,4 +42,4 @@ class Line_Chart extends React.Component{
   }
 }
 
-export default Line_Chart;
+export default Chart_4;
